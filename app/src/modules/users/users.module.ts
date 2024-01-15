@@ -9,6 +9,7 @@ import { UsersController } from './users.controller';
 import { PrismaService } from '../database/database.service';
 import { IsInUseMiddleware } from './middlewares/is-in-use.middleware';
 import { NotFoundMiddleware } from './middlewares/not-found.middleware';
+import { PermissionsMiddleware } from './middlewares/permissions.middleware';
 
 @Module({
   controllers: [UsersController],
@@ -22,7 +23,7 @@ export class UsersModule implements NestModule {
         { method: RequestMethod.POST, path: 'users' },
         { method: RequestMethod.PATCH, path: 'users/:id' },
       )
-      .apply(NotFoundMiddleware)
+      .apply(NotFoundMiddleware, PermissionsMiddleware)
       .forRoutes('users/:id');
   }
 }
