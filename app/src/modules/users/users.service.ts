@@ -10,7 +10,7 @@ import {
 import { plainToInstance } from 'class-transformer';
 import { IResponseGetUsers } from './users.interface';
 import { QueryPaginationDto } from './dtos/pagination.dto';
-import { calculatePagination } from 'src/utils/calculate-pagination';
+import { calculatePagination } from '../../utils/calculate-pagination';
 
 @Injectable()
 export class UsersService {

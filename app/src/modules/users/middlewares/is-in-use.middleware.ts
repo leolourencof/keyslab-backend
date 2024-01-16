@@ -1,6 +1,6 @@
 import { ConflictException, Injectable, NestMiddleware } from '@nestjs/common';
 import { Request, Response, NextFunction } from 'express';
-import { PrismaService } from 'src/modules/database/database.service';
+import { PrismaService } from '../../database/database.service';
 
 @Injectable()
 export class IsInUseMiddleware implements NestMiddleware {
