@@ -12,7 +12,7 @@ export class PermissionsMiddleware implements NestMiddleware {
   constructor(private readonly jwtService: JwtService) {}
 
   async use(req: Request, res: Response, next: NextFunction) {
-    const authToken = req.cookies.hubble_access_token;
+    const authToken = req.cookies.key_labs_token;
 
     try {
       await this.jwtService.verifyAsync(authToken);
