@@ -21,7 +21,7 @@ export class AuthController {
 
     response.cookie('key_labs_token', access_token, {
       httpOnly: true,
-      maxAge: 60 * 48,
+      maxAge: 2 * 24 * 60 * 60 * 1000,
       sameSite: 'none',
       secure: true,
     });
