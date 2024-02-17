@@ -24,7 +24,7 @@ export class AuthController {
       maxAge: 2 * 24 * 60 * 60 * 1000,
       sameSite: 'none',
       secure: true,
-      domain: 'utamusic.site',
+      domain: 'vercel.app',
     });
 
     response.json({ message: 'Logged in successfully' });
