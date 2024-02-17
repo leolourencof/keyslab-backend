@@ -22,9 +22,9 @@ export class AuthController {
     response.cookie('key_labs_token', access_token, {
       httpOnly: true,
       maxAge: 2 * 24 * 60 * 60 * 1000,
-      sameSite: 'none',
+      sameSite: 'strict',
       secure: true,
-      domain: '.vercel.app',
+      domain: process.env.FRONT_END_URL,
     });
 
     response.json({ message: 'Logged in successfully' });
