@@ -12,6 +12,7 @@ async function bootstrap() {
     origin: process.env.FRONT_END_URL,
     methods: '*',
     credentials: true,
+    allowedHeaders: '*',
   });
 
   await app.listen(3000);
