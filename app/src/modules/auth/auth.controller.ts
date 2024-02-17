@@ -22,7 +22,7 @@ export class AuthController {
     response.cookie('key_labs_token', access_token, {
       httpOnly: true,
       maxAge: 2 * 24 * 60 * 60 * 1000,
-      sameSite: 'lax',
+      sameSite: 'none',
       secure: true,
       domain: 'utamusic.site',
     });
