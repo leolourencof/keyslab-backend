@@ -24,6 +24,7 @@ export class AuthController {
       maxAge: 2 * 24 * 60 * 60 * 1000,
       sameSite: 'none',
       secure: true,
+      domain: process.env.FRONT_END_URL,
     });
 
     response.json({ message: 'Logged in successfully' });
