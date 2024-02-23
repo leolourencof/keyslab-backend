@@ -37,7 +37,7 @@ export class UsersService {
           { nickname: { mode: 'insensitive', equals: nickname } },
         ],
       },
-      skip: page - 1,
+      skip: (page - 1) * limit,
     });
 
     const { totalPages, hasPreviousPage, hasNextPage } = calculatePagination(
